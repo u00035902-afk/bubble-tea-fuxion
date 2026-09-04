@@ -468,8 +468,25 @@ body {
     width: 50%; /* Le asigna mayor proporción dentro de la fila */
 }
 
-/*- efecti transprencia */
+/*- reposponsive*/
 
+/* Corrección específica para el contenedor de las 3 imágenes en celulares */
+@media (max-width: 768px) {
+    .identity-banner-box {
+        flex-direction: column; /* Apila las 3 imágenes verticalmente */
+        width: 100%;
+        padding: 0 15px; /* Evita que peguen a los bordes de la pantalla */
+        gap: 15px;
+    }
+
+    /* Aplica a las dos laterales y a la central */
+    .identity-banner-box img,
+    .identity-banner-box img:nth-child(2) {
+        width: 100% !important; /* Ocupan todo el ancho del teléfono */
+        height: 220px !important; /* Altura fija adecuada para móviles */
+        object-fit: cover !important; /* Ajusta la imagen sin deformar el contenido */
+    }
+}
 
 
 /* Estado inicial de las 3 imágenes (semi-transparentes) */
